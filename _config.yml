@@ -23,7 +23,7 @@ repository               : "mahtabshaan/mahtabshaan.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile.jpg"
   name             : "Mahtab Noor Shaan"
   pronouns         : "he/him"  
   bio              : "Master’s in Electrical Engineering | Robotics & Autonomous Control | Ex-ML Engineer | Seeking Full-Time Roles in USA/Canada"
