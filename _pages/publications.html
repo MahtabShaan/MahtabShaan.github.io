@@ -11,8 +11,43 @@ author_profile: true
 
 {% include base_path %}
 
-<!-- Publications in chronological order -->
+<!-- Publications in chronological order
 {% assign sorted_publications = site.publications | sort: 'date' | reverse %}
 {% for post in sorted_publications %}
 {% include custom-publications.html %}
+{% endfor %} -->
+
+{% for post in site.publications %}
+<div class="pub-card" style="display:flex;gap:1rem;align-items:flex-start;margin-bottom:0.9rem;">
+  <div style="flex:0 0 150px;">
+    <img src="{{ post.header.teaser | default: '/images/default-thumbnail.png' }}"
+         style="max-width:100%;border-radius:8px;border:1px solid #ccc;object-fit:cover;">
+  </div>
+  <div>
+    <h3 style="margin:0 0 .2rem 0;font-size:1.05em;">
+      <a href="{{ post.url | relative_url }}" style="text-decoration:none;">{{ post.title }}</a>
+    </h3>
+
+    {% if post.authors %}
+    <p style="margin:.1rem 0;font-size:.95em;">{{ post.authors }}</p>
+    {% endif %}
+
+    {% if post.venue %}
+    <p style="margin:.1rem 0;font-size:.9em;"><i>{{ post.venue }}</i></p>
+    {% endif %}
+
+    {% if post.buttons %}
+    <p style="margin:.2rem 0 0 0;font-size:.95em;">
+      {% for btn in post.buttons %}
+        <a href="{{ btn.url }}" target="_blank" style="margin-right:.8rem;text-decoration:none;">
+          {% if btn.type == "paper" %}📄 Paper{% endif %}
+          {% if btn.type == "video" %}🎥 Video{% endif %}
+          {% if btn.type == "code" %}💻 Code{% endif %}
+          {% if btn.type == "website" %}🌐 Website{% endif %}
+        </a>
+      {% endfor %}
+    </p>
+    {% endif %}
+  </div>
+</div>
 {% endfor %}
