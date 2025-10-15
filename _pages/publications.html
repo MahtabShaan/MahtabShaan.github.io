@@ -14,5 +14,5 @@ author_profile: true
 <!-- Publications in chronological order -->
 {% assign sorted_publications = site.publications | sort: 'date' | reverse %}
 {% for post in sorted_publications %}
-{% include custom-publication.html %}
+{% include custom-publications.html %}
 {% endfor %}
