@@ -11,4 +11,4 @@ venue: Journal of Medical and Biological Engineering (JMBE), 2022
 buttons:
   - type: paper
     url: https://link.springer.com/article/10.1007/s40846-022-00754-z
-  ---
+---
